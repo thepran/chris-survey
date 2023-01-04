@@ -3,6 +3,8 @@ const FRAME_2 = document.querySelector("#frame2");
 const FRAME_3 = document.querySelector("#frame3");
 const FRAME_4 = document.querySelector("#frame4");
 const FRAME_5 = document.querySelector("#frame5");
+const FRAME_6 = document.querySelector("#frame6");
+const FRAME_7 = document.querySelector("#frame7");
 
 // Frame 1
 
@@ -76,6 +78,7 @@ FRAME_2_SUB_BTN.addEventListener("click", (e) => {
     errorTextFrame2.innerHTML = `<span class="material-symbols-rounded"> warning </span>
     Please select more choices`;
   } else {
+    errorTextFrame2.classList.add("display-none");
     FRAME_3.scrollIntoView();
   }
 });
@@ -222,6 +225,23 @@ function frame5Submit(e) {
   if (Boolean(wereNotPaired)) {
     FRAME_5_SUB_BTN.classList.remove("display-none");
     errorTextFrame5.classList.add("display-none");
-    // FRAME_6.scrollIntoView();
+    FRAME_6.scrollIntoView();
   }
 }
+/**************************** */
+
+/**Frame6*********************** */
+let firstName = null;
+let lastName = null;
+
+const FRAME_6_SUB_BTN = document.querySelector("button#frame6-submit");
+FRAME_6_SUB_BTN.addEventListener("click", (e) => {
+  const inputfirstName = document.querySelector(
+    "#frame6 input#first-name"
+  ).value;
+  const inputlastName = document.querySelector("#frame6 input#last-name").value;
+  firstName = inputfirstName ? inputfirstName : null;
+  lastName = inputlastName ? inputlastName : null;
+
+  FRAME_7.scrollIntoView();
+});

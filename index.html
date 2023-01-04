@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,300,1,0"
+    />
+    <title>Survey</title>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="brand-logo" class="logo" />
+    </header>
+    <main class="form-container" id="main">
+      <div class="frame" id="frame1">
+        <div class="image">
+          <img
+            src="images/default-firstframe.svg"
+            alt="yes"
+            class="frame-img"
+          />
+        </div>
+        <div class="question">
+          <div class="question-content">
+            <span class="question-title">
+              Did you have <strong>fun</strong> today? *
+            </span>
+            <div class="answer">
+              <div class="options" id="options-frame1">
+                <div
+                  class="radio-list"
+                  id="frame1-yes"
+                  value="yes"
+                  data-value="yes"
+                >
+                  <span class="letter">Y</span>
+                  <span class="value">Yes</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame1-no"
+                  value="no"
+                  data-value="no"
+                >
+                  <span class="letter">N</span>
+                  <span class="value">No</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+              </div>
+              <button class="frame-submit" id="frame1-submit">
+                OK <span class="check material-symbols-outlined"> done </span>
+              </button>
+              <div class="error-text display-none" id="frame1-error-text">
+                <span class="material-symbols-rounded"> warning </span>
+                <strong>Oops!&nbsp;</strong>Please make a selection
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame" id="frame2">
+        <div class="image">
+          <img src="images/frame2.svg" alt="yes" class="frame-img" />
+        </div>
+        <div class="question">
+          <div class="question-content">
+            <span class="question-title"> How were the questions? * </span>
+            <div class="answer">
+              <div class="options">
+                <div class="conditions">Choose 2</div>
+                <div
+                  class="radio-list"
+                  id="frame2-a"
+                  value="difficult"
+                  data-value="difficult"
+                >
+                  <span class="letter">A</span>
+                  <span class="value">Difficult</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-b"
+                  value="not-bad"
+                  data-value="not-bad"
+                >
+                  <span class="letter">B</span>
+                  <span class="value">Not Bad</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-c"
+                  value="challenging"
+                  data-value="challenging"
+                >
+                  <span class="letter">C</span>
+                  <span class="value">Challenging</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-d"
+                  value="thought-provoking"
+                  data-value="thought-provoking"
+                >
+                  <span class="letter">D</span>
+                  <span class="value">Thought Provoking</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-e"
+                  value="bad"
+                  data-value="bad"
+                >
+                  <span class="letter">E</span>
+                  <span class="value">Bad</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-f"
+                  value="great"
+                  data-value="great"
+                >
+                  <span class="letter">F</span>
+                  <span class="value">Great</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-h"
+                  value="engaging"
+                  data-value="engaging"
+                >
+                  <span class="letter">G</span>
+                  <span class="value">Engaging</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-h"
+                  value="good"
+                  data-value="good"
+                >
+                  <span class="letter">H</span>
+                  <span class="value">Good</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame2-i"
+                  value="fun"
+                  data-value="fun"
+                >
+                  <span class="letter">I</span>
+                  <span class="value">Fun</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+              </div>
+              <button class="frame-submit" id="frame2-submit">
+                OK <span class="check material-symbols-outlined"> done </span>
+              </button>
+              <div class="error-text display-none" id="frame2-error-text">
+                <span class="material-symbols-rounded"> warning </span>
+                <strong>Oops!&nbsp;</strong>Please make a selection
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame" id="frame3">
+        <div class="image">
+          <img src="images/frame3.svg" alt="yes" class="frame-img" />
+        </div>
+        <div class="question">
+          <div class="question-content">
+            <span class="question-title">
+              Were those you met <strong>interesting?</strong> *
+            </span>
+            <div class="answer">
+              <div class="options" id="options-frame3">
+                <div
+                  class="radio-list"
+                  id="frame3-yes"
+                  value="yes"
+                  data-value="yes"
+                >
+                  <span class="letter">Y</span>
+                  <span class="value">Yes</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame3-no"
+                  value="no"
+                  data-value="no"
+                >
+                  <span class="letter">N</span>
+                  <span class="value">No</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+              </div>
+              <button class="frame-submit" id="frame3-submit">
+                OK <span class="check material-symbols-outlined"> done </span>
+              </button>
+              <div class="error-text display-none" id="frame3-error-text">
+                <span class="material-symbols-rounded"> warning </span>
+                <strong>Oops!&nbsp;</strong>Please make a selection
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame" id="frame4">
+        <div class="image">
+          <img src="images/frame4.svg" alt="yes" class="frame-img" />
+        </div>
+        <div class="question">
+          <div class="question-content">
+            <span class="question-title">
+              Were those you met <strong>relatable?</strong> *
+            </span>
+            <div class="answer">
+              <div class="options" id="options-frame4">
+                <div
+                  class="radio-list"
+                  id="frame4-yes"
+                  value="yes"
+                  data-value="yes"
+                >
+                  <span class="letter">Y</span>
+                  <span class="value">Yes</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame4-no"
+                  value="no"
+                  data-value="no"
+                >
+                  <span class="letter">N</span>
+                  <span class="value">No</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+              </div>
+              <button class="frame-submit" id="frame4-submit">
+                OK <span class="check material-symbols-outlined"> done </span>
+              </button>
+              <div class="error-text display-none" id="frame4-error-text">
+                <span class="material-symbols-rounded"> warning </span>
+                <strong>Oops!&nbsp;</strong>Please make a selection
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame" id="frame5">
+        <div class="image">
+          <img src="images/frame5.svg" alt="yes" class="frame-img" />
+        </div>
+        <div class="question">
+          <div class="question-content">
+            <span class="question-title">
+              Is there anyone you <strong>weren't paired w/ today,</strong> but
+              <strong>would</strong> pick to be <strong>next time? </strong>*
+            </span>
+            <div class="answer">
+              <div class="options" id="options-frame5">
+                <div
+                  class="radio-list"
+                  id="frame5-yes"
+                  value="yes"
+                  data-value="yes"
+                >
+                  <span class="letter">Y</span>
+                  <span class="value">Yes</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+                <div
+                  class="radio-list"
+                  id="frame5-no"
+                  value="no"
+                  data-value="no"
+                >
+                  <span class="letter">N</span>
+                  <span class="value">No</span>
+                  <span class="check material-symbols-outlined"> done </span>
+                </div>
+              </div>
+              <button class="frame-submit" id="frame5-submit">
+                OK <span class="check material-symbols-outlined"> done </span>
+              </button>
+              <div class="error-text display-none" id="frame5-error-text">
+                <span class="material-symbols-rounded"> warning </span>
+                <strong>Oops!&nbsp;</strong>Please make a selection
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

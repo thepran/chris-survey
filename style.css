@@ -247,7 +247,8 @@ p a {
 }
 
 .blink {
-  animation: 0.25s ease 0.25s 2 normal running ani-blink;
+  /* animation: 0.25s ease 0.25s 2 normal running ani-blink; */
+  transition: all 0.5 ease;
 }
 @keyframes ani-blink {
   from {

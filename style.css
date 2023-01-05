@@ -247,12 +247,12 @@ p a {
 }
 
 .blink {
-  /* animation: 0.25s ease 0.25s 2 normal running ani-blink; */
-  transition: all 0.5 ease;
+  animation: 0.01s ease 0.25s 2 normal running ani-blink;
+  /* transition: all 0.5 ease; */
 }
 @keyframes ani-blink {
   from {
-    opacity: 0.2;
+    opacity: 0.7;
   }
   to {
     opacity: 1;

@@ -5,6 +5,8 @@ const FRAME_4 = document.querySelector("#frame4");
 const FRAME_5 = document.querySelector("#frame5");
 const FRAME_6 = document.querySelector("#frame6");
 const FRAME_7 = document.querySelector("#frame7");
+const FRAME_8 = document.querySelector("#frame8");
+const FRAME_9 = document.querySelector("#frame9");
 
 // Frame 1
 
@@ -245,3 +247,84 @@ FRAME_6_SUB_BTN.addEventListener("click", (e) => {
 
   FRAME_7.scrollIntoView();
 });
+/**************************************** */
+
+/**FRAME 7*************** */
+let isInterested = null;
+const errorTextFrame7 = document.querySelector("#frame7-error-text");
+
+const FRAME_7_SUB_BTN = document.querySelector("button#frame7-submit");
+FRAME_7_SUB_BTN.addEventListener("click", (e) => {
+  if (!isInterested) {
+    errorTextFrame7.classList.remove("display-none");
+    FRAME_7_SUB_BTN.classList.add("display-none");
+  } else errorTextFrame7.classList.add("display-none");
+  frame7Submit(e);
+});
+
+const FRAME_7_YES = document.querySelector("#frame7-yes");
+const FRAME_7_NO = document.querySelector("#frame7-no");
+
+FRAME_7_YES.addEventListener("click", setisInterested);
+FRAME_7_NO.addEventListener("click", setisInterested);
+
+function setisInterested(e) {
+  [...document.querySelectorAll("#options-frame7 .radio-list")].forEach(
+    (list) => {
+      list.classList.remove("selected");
+    }
+  );
+  isInterested =
+    isInterested === this.dataset.value ? null : this.dataset.value;
+  console.log(this.dataset.value);
+  frame7Submit(e);
+  isInterested ? this.classList.add("selected") : "";
+}
+function frame7Submit(e) {
+  if (Boolean(isInterested)) {
+    FRAME_7_SUB_BTN.classList.remove("display-none");
+    errorTextFrame7.classList.add("display-none");
+    FRAME_8.scrollIntoView();
+  }
+}
+/************************************************* */
+let wantToTryTrial = null;
+const errorTextFrame8 = document.querySelector("#frame8-error-text");
+
+const FRAME_8_SUB_BTN = document.querySelector("button#frame8-submit");
+FRAME_8_SUB_BTN.addEventListener("click", (e) => {
+  if (!wantToTryTrial) {
+    errorTextFrame8.classList.remove("display-none");
+    FRAME_8_SUB_BTN.classList.add("display-none");
+  } else errorTextFrame8.classList.add("display-none");
+  frame8Submit(e);
+});
+
+const FRAME_8_YES = document.querySelector("#frame8-yes");
+const FRAME_8_NO = document.querySelector("#frame8-no");
+
+FRAME_8_YES.addEventListener("click", setWantToTryTrial);
+FRAME_8_NO.addEventListener("click", setWantToTryTrial);
+
+function setWantToTryTrial(e) {
+  [...document.querySelectorAll("#options-frame8 .radio-list")].forEach(
+    (list) => {
+      list.classList.remove("selected");
+    }
+  );
+  wantToTryTrial =
+    wantToTryTrial === this.dataset.value ? null : this.dataset.value;
+  console.log(this.dataset.value);
+  frame8Submit(e);
+  wantToTryTrial ? this.classList.add("selected") : "";
+}
+function frame8Submit(e) {
+  if (Boolean(wantToTryTrial)) {
+    FRAME_8_SUB_BTN.classList.remove("display-none");
+    errorTextFrame8.classList.add("display-none");
+    FRAME_9.scrollIntoView();
+  }
+}
+/************************FRAME 8************************ */
+
+/******************************************************* */

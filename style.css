@@ -118,7 +118,7 @@ main {
   width: 100%;
   font-size: 20px;
 }
-.check {
+.radio-list .check {
   visibility: hidden;
 }
 .selected {

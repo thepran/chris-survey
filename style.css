@@ -6,6 +6,9 @@
 html {
   scroll-behavior: smooth;
 }
+/* body {
+  overflow-y: hidden;
+} */
 header {
   z-index: 30;
   position: fixed;
@@ -24,11 +27,13 @@ main {
 
 .frame {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: 1px solid red;
 }
 .image {
   display: flex;
@@ -44,6 +49,8 @@ main {
   position: relative;
   width: 50%;
   display: flex;
+  height: 100vh;
+  overflow-y: scroll;
   justify-content: center;
   flex-direction: column;
   transition: all 600ms ease 0s;
@@ -112,7 +119,7 @@ main {
   padding: 5px 8px;
 }
 .value {
-  flex-basis: 90px;
+  flex-basis: 145px;
   font-size: 20px;
 }
 .check {
@@ -130,6 +137,7 @@ button.frame-submit {
   font-weight: 700;
   border: 1px solid transparent;
   min-height: 40px;
+  max-width: 100px;
   color: #fff;
   background-color: #0142ac;
   padding: 6px 14px;
@@ -172,3 +180,54 @@ button.frame-submit:hover {
   font-size: 14px;
   color: rgb(240, 114, 56);
 }
+
+.question.full-width {
+  width: 100%;
+  max-width: 720px;
+  margin: 0px auto 184px;
+  padding: 40px 0;
+}
+#frame6-inputs {
+  margin-top: 32px;
+}
+.input-row {
+  margin-bottom: 48px;
+}
+.input-row label {
+  display: block;
+  margin: 0px;
+  width: 100%;
+  font-weight: unset;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(240, 114, 56);
+  margin-bottom: 8px;
+}
+.input-field {
+  display: block;
+  width: 100%;
+  color: rgb(240, 114, 56);
+  padding: 0px 0px 8px;
+  border: none;
+  font-size: 24px;
+  border-bottom: 1px solid #f072384d;
+  outline: none;
+}
+p {
+  margin-top: 32px;
+  max-width: 100%;
+  font-weight: unset;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000000b3;
+  text-align: left;
+}
+#frame7 .radio-list {
+  min-width: 350px;
+}
+#frame7 .value {
+  flex-basis: 255px;
+}
+/* #frame7 .question {
+  padding-top: 5rem;
+} */

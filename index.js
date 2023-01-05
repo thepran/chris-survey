@@ -7,6 +7,7 @@ const FRAME_6 = document.querySelector("#frame6");
 const FRAME_7 = document.querySelector("#frame7");
 const FRAME_8 = document.querySelector("#frame8");
 const FRAME_9 = document.querySelector("#frame9");
+const FRAME_10 = document.querySelector("#frame10");
 
 // Frame 1
 
@@ -28,19 +29,28 @@ const FRAME_1_NO = document.querySelector("#frame1-no");
 FRAME_1_YES.addEventListener("click", setHaveFunToday);
 FRAME_1_NO.addEventListener("click", setHaveFunToday);
 
+FRAME_1_YES.addEventListener("animationend", frameSubmit);
+FRAME_1_NO.addEventListener("animationend", frameSubmit);
+
 function setHaveFunToday(e) {
   [...document.querySelectorAll("#options-frame1 .radio-list")].forEach(
     (list) => {
-      list.classList.remove("selected");
-      console.log("a");
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
     }
   );
+  console.log(this);
+  console.log(this.querySelector(".letter"));
   haveFunToday =
     haveFunToday === this.dataset.value ? null : this.dataset.value;
-  console.log(`haveFunToday ${haveFunToday}`);
   console.log(this.dataset.value);
-  frameSubmit(e);
-  haveFunToday ? this.classList.add("selected") : "";
+  // frameSubmit(e);
+  if (haveFunToday) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
 }
 function frameSubmit(e) {
   console.log(Boolean(haveFunToday));
@@ -62,7 +72,6 @@ function frameSubmit(e) {
 /**********************frame2********************** */
 let howWereQuestions = [];
 const FRAME_2_RADIO = document.querySelectorAll("#frame2 .radio-list");
-console.log(FRAME_2_RADIO);
 [...FRAME_2_RADIO].forEach((radio) =>
   radio.addEventListener("click", setHowWereTheQuestions)
 );
@@ -87,14 +96,20 @@ FRAME_2_SUB_BTN.addEventListener("click", (e) => {
 
 function setHowWereTheQuestions(e) {
   console.log(this);
-  //   if (howWereQuestions.length == 2) console.log("maxlimit");
+
   const indexOfValue = howWereQuestions.indexOf(this.dataset.value);
+
   if (indexOfValue == -1 && howWereQuestions.length < 2) {
+    //When none is selected
     howWereQuestions.push(this.dataset.value);
-    this.classList.add("selected");
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
   } else if (indexOfValue != -1) {
     howWereQuestions.splice(indexOfValue, 1);
-    this.classList.remove("selected");
+    this.classList.remove("selected", "blink");
+    this.querySelector(".letter").classList.remove("letter-selected");
+    this.querySelector(".check").classList.remove("check-selected");
   }
 
   console.log(howWereQuestions);
@@ -120,19 +135,26 @@ const FRAME_3_NO = document.querySelector("#frame3-no");
 FRAME_3_YES.addEventListener("click", setWereInterseting);
 FRAME_3_NO.addEventListener("click", setWereInterseting);
 
+FRAME_3_YES.addEventListener("animationend", frame3Submit);
+FRAME_3_NO.addEventListener("animationend", frame3Submit);
+
 function setWereInterseting(e) {
   [...document.querySelectorAll("#options-frame3 .radio-list")].forEach(
     (list) => {
-      list.classList.remove("selected");
-      console.log("a");
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
     }
   );
   wereInteresting =
     wereInteresting === this.dataset.value ? null : this.dataset.value;
   console.log(`wereInterseting ${wereInteresting}`);
   console.log(this.dataset.value);
-  frame3Submit(e);
-  wereInteresting ? this.classList.add("selected") : "";
+  if (wereInteresting) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
 }
 function frame3Submit(e) {
   console.log(Boolean(wereInteresting));
@@ -165,18 +187,24 @@ const FRAME_4_NO = document.querySelector("#frame4-no");
 
 FRAME_4_YES.addEventListener("click", setWereRelatable);
 FRAME_4_NO.addEventListener("click", setWereRelatable);
+FRAME_4_YES.addEventListener("animationend", frame4Submit);
+FRAME_4_NO.addEventListener("animationend", frame4Submit);
 
 function setWereRelatable(e) {
   [...document.querySelectorAll("#options-frame4 .radio-list")].forEach(
     (list) => {
-      list.classList.remove("selected");
-      console.log("a");
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
     }
   );
   wereRelatable =
     wereRelatable === this.dataset.value ? null : this.dataset.value;
-  frame4Submit(e);
-  wereRelatable ? this.classList.add("selected") : "";
+  if (wereRelatable) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
 }
 function frame4Submit(e) {
   //   console.log(this.target);
@@ -208,18 +236,24 @@ const FRAME_5_NO = document.querySelector("#frame5-no");
 
 FRAME_5_YES.addEventListener("click", setWereNotPaired);
 FRAME_5_NO.addEventListener("click", setWereNotPaired);
+FRAME_5_YES.addEventListener("animationend", frame5Submit);
+FRAME_5_NO.addEventListener("animationend", frame5Submit);
 
 function setWereNotPaired(e) {
   [...document.querySelectorAll("#options-frame5 .radio-list")].forEach(
     (list) => {
-      list.classList.remove("selected");
-      console.log("a");
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
     }
   );
   wereNotPaired =
     wereNotPaired === this.dataset.value ? null : this.dataset.value;
-  frame5Submit(e);
-  wereNotPaired ? this.classList.add("selected") : "";
+  if (wereNotPaired) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
 }
 function frame5Submit(e) {
   //   console.log(this.target);
@@ -267,18 +301,24 @@ const FRAME_7_NO = document.querySelector("#frame7-no");
 
 FRAME_7_YES.addEventListener("click", setisInterested);
 FRAME_7_NO.addEventListener("click", setisInterested);
+FRAME_7_YES.addEventListener("animationend", frame7Submit);
+FRAME_7_NO.addEventListener("animationend", frame7Submit);
 
 function setisInterested(e) {
   [...document.querySelectorAll("#options-frame7 .radio-list")].forEach(
     (list) => {
-      list.classList.remove("selected");
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
     }
   );
   isInterested =
     isInterested === this.dataset.value ? null : this.dataset.value;
-  console.log(this.dataset.value);
-  frame7Submit(e);
-  isInterested ? this.classList.add("selected") : "";
+  if (isInterested) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
 }
 function frame7Submit(e) {
   if (Boolean(isInterested)) {
@@ -288,6 +328,8 @@ function frame7Submit(e) {
   }
 }
 /************************************************* */
+
+/************************FRAME 8************************ */
 let wantToTryTrial = null;
 const errorTextFrame8 = document.querySelector("#frame8-error-text");
 
@@ -306,17 +348,24 @@ const FRAME_8_NO = document.querySelector("#frame8-no");
 FRAME_8_YES.addEventListener("click", setWantToTryTrial);
 FRAME_8_NO.addEventListener("click", setWantToTryTrial);
 
+FRAME_8_YES.addEventListener("animationend", frame8Submit);
+FRAME_8_NO.addEventListener("animationend", frame8Submit);
+
 function setWantToTryTrial(e) {
   [...document.querySelectorAll("#options-frame8 .radio-list")].forEach(
     (list) => {
-      list.classList.remove("selected");
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
     }
   );
   wantToTryTrial =
     wantToTryTrial === this.dataset.value ? null : this.dataset.value;
-  console.log(this.dataset.value);
-  frame8Submit(e);
-  wantToTryTrial ? this.classList.add("selected") : "";
+  if (wantToTryTrial) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
 }
 function frame8Submit(e) {
   if (Boolean(wantToTryTrial)) {
@@ -325,6 +374,93 @@ function frame8Submit(e) {
     FRAME_9.scrollIntoView();
   }
 }
-/************************FRAME 8************************ */
+/******************************************************* */
 
+/************************FRAME 9************************ */
+let trialConfirm = null;
+const errorTextFrame9 = document.querySelector("#frame9-error-text");
+
+const FRAME_9_SUB_BTN = document.querySelector("button#frame9-submit");
+FRAME_9_SUB_BTN.addEventListener("click", (e) => {
+  if (!trialConfirm) {
+    errorTextFrame9.classList.remove("display-none");
+    FRAME_9_SUB_BTN.classList.add("display-none");
+  } else errorTextFrame9.classList.add("display-none");
+  frame9Submit(e);
+});
+
+const FRAME_9_YES = document.querySelector("#frame9-yes");
+const FRAME_9_NO = document.querySelector("#frame9-no");
+
+FRAME_9_YES.addEventListener("click", setTrialConfirm);
+FRAME_9_NO.addEventListener("click", setTrialConfirm);
+
+FRAME_9_YES.addEventListener("animationend", frame9Submit);
+FRAME_9_NO.addEventListener("animationend", frame9Submit);
+
+function setTrialConfirm(e) {
+  [...document.querySelectorAll("#options-frame9 .radio-list")].forEach(
+    (list) => {
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
+    }
+  );
+  trialConfirm =
+    trialConfirm === this.dataset.value ? null : this.dataset.value;
+  if (trialConfirm) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
+}
+function frame9Submit(e) {
+  if (Boolean(trialConfirm)) {
+    FRAME_9_SUB_BTN.classList.remove("display-none");
+    errorTextFrame9.classList.add("display-none");
+    FRAME_10.scrollIntoView();
+  }
+}
+/******************************************************* */
+
+/**************************FRAME10*********************** */
+let getStarted = null;
+const errorTextFrame10 = document.querySelector("#frame10-error-text");
+
+const FRAME_10_SUB_BTN = document.querySelector("button#frame10-submit");
+FRAME_10_SUB_BTN.addEventListener("click", (e) => {
+  if (!getStarted) {
+    errorTextFrame10.classList.remove("display-none");
+    FRAME_10_SUB_BTN.classList.add("display-none");
+  } else errorTextFrame10.classList.add("display-none");
+  frame8Submit(e);
+});
+
+const FRAME_10_YES = document.querySelector("#frame10-yes");
+const FRAME_10_NO = document.querySelector("#frame10-no");
+
+FRAME_10_YES.addEventListener("click", setGetStarted);
+
+function setGetStarted(e) {
+  [...document.querySelectorAll("#options-frame10 .radio-list")].forEach(
+    (list) => {
+      list.classList.remove("selected", "blink");
+      list.querySelector(".letter").classList.remove("letter-selected");
+      list.querySelector(".check").classList.remove("check-selected");
+    }
+  );
+  getStarted = getStarted === this.dataset.value ? null : this.dataset.value;
+  if (getStarted) {
+    this.classList.add("selected", "blink");
+    this.querySelector(".letter").classList.add("letter-selected");
+    this.querySelector(".check").classList.add("check-selected");
+  }
+}
+function frame10Submit(e) {
+  if (Boolean(getStarted)) {
+    FRAME_10_SUB_BTN.classList.remove("display-none");
+    errorTextFrame10.classList.add("display-none");
+    // FRAME_9.scrollIntoView();
+  }
+}
 /******************************************************* */
